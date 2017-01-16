@@ -88,6 +88,7 @@ print len(comment_result)
 raw_df['clean'] = comment_result
 db_save_path = '/Volumes/Macintosh/dataset/stock_sentiment/discusscleartest.db'
 co = sqlite3.connect(db_save_path)
+# 将结果写到数据库中
 raw_df.to_sql(table_name, co, if_exists='replace', index=False)
 co.close()
 print raw_df.head(10)
