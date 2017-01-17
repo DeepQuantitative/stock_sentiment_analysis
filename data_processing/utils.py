@@ -14,7 +14,7 @@ db_path = '/Volumes/Macintosh/dataset/stock_sentiment/discussclear.db'
 
 def time_statistic(db_path):
     """
-    统计所有股票中最早的评论创建的时间
+    统计所有股票评论中最早的评论创建的时间
     :param db_path:
     :return:
     """

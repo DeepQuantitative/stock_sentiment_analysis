@@ -53,6 +53,7 @@ for i in xrange(len(text)):
                 print "评论中只包含一条短评的结果：%s" % res
                 comment_result.append(str(res))
             else:
+                print "这条评论被标记为NULL_COMMENT1"
                 comment_result.append('NULL_COMMENT')
         else:
             # 按照字典格式保存所有提取出来的评论。
@@ -68,10 +69,12 @@ for i in xrange(len(text)):
                     if tmp < 0:
                         num += 1
                 else:
+                    print "这条评论被标记为NULL_COMMENT2"
                     res_dic[comment_list[index][0]] = 'NULL_COMMENT'
             # 如果第一个评论被判断为无效评论，该条评论结果为null
             if res_dic['content_0'] == 'NULL_COMMENT':
-                comment_result.append('NULL')
+                print "这条评论被过滤3"
+                comment_result.append('NULL_COMMENT')
                 continue
             # 如果不是无效评论，则进行情感值计算
             elif num % 2 == 0:
@@ -81,12 +84,13 @@ for i in xrange(len(text)):
             print "评论中包含多条短评的结果: %s" % score
             comment_result.append(str(score))
     except:
+        print "无效评论"
         comment_result.append("NULL")
 print len(comment_result)
 
 # dataframe添加一列
 raw_df['clean'] = comment_result
-db_save_path = '/Volumes/Macintosh/dataset/stock_sentiment/discusscleartest.db'
+db_save_path = '/Volumes/Macintosh/dataset/stock_sentiment/discusscleartest2.db'
 co = sqlite3.connect(db_save_path)
 # 将结果写到数据库中
 raw_df.to_sql(table_name, co, if_exists='replace', index=False)

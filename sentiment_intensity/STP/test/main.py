@@ -200,9 +200,9 @@ if __name__ == "__main__":
 
     # 初始化五个词典
     dicts.init()
-    add_words = add_sentiment()
-    temp = dict(dicts.senti_dict.items() + add_words.items())
-    dicts.senti_dict = temp
+    # add_words = add_sentiment()
+    # temp = dict(dicts.senti_dict.items() + add_words.items())
+    # dicts.senti_dict = temp
 
     # test_xueqiu()
 
