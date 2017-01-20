@@ -1,11 +1,6 @@
 # coding=utf-8
-import json
 import sys
-import re
 import sqlite3
-from sentiment_intensity.STP.test import read_data
-from sentiment_intensity.STP import sentiment
-import data_cleaning
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -40,3 +35,9 @@ def time_statistic(db_path):
     conn.close()
     print "评论最早发布时间：", min(result_)
     print "结果的长度：", len(result_)
+
+
+if __name__ == '__main__':
+    stock_name = 'SH60'
+    for i in range(4000):
+        print(stock_name + str(i).zfill(4))

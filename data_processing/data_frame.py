@@ -110,10 +110,10 @@ def run(db_path, table_name, db_save_path):
 
 if __name__ == '__main__':
     db_path = '/Volumes/Macintosh/dataset/stock_sentiment/discussclear.db'
-    stock_name = 'SH60000'
-    for i in xrange(10):
+    stock_name = 'SH60'
+    for i in xrange(4000):
         try:
-            table_name = stock_name + str(i)
+            table_name = stock_name + str(i).zfill(4)
             db_save_path = '/Volumes/Macintosh/dataset/stock_sentiment/discussclearSH60000%s.db' % i
             print table_name, db_save_path
             run(db_path, table_name, db_save_path)
