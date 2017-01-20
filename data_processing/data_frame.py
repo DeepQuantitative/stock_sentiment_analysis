@@ -2,6 +2,10 @@
 """
 使用dataframe格式计算每条评论的情感强度，中间包含了去除无关评论、
 """
+import sys
+sys.path.insert(0, '/Users/li/workshop/MyRepository/stock_sentiment_analysis')
+sys.path.insert(1, '/Users/li/workshop/MyRepository/stock_sentiment_analysis/sentiment_intensity/STP')
+
 from pandas.io import sql
 import sqlite3
 import json
@@ -10,6 +14,8 @@ from sentiment_intensity.STP import dicts
 from sentiment_intensity.STP import sentiment
 from sentiment_intensity.STP.test import read_data
 from delete_no_use import delete_no_use
+
+
 
 
 def run(db_path, table_name, db_save_path):
