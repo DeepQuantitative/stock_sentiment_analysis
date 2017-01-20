@@ -1,3 +1,4 @@
-import sentiment_intensity
-import sentiment_polarity
+from sentiment_intensity.STP import dicts
+from sentiment_intensity.STP import sentiment
+from sentiment_intensity.STP.test import read_data
 import globe
