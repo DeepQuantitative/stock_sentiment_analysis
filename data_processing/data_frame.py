@@ -16,8 +16,6 @@ from sentiment_intensity.STP.test import read_data
 from delete_no_use import delete_no_use
 
 
-
-
 def run(db_path, table_name, db_save_path):
     """
 
@@ -96,6 +94,10 @@ def run(db_path, table_name, db_save_path):
                 comment_result.append(str(score))
         except:
             print "无效评论"
+            print '=== STEP ERROR INFO START'
+            import traceback
+            traceback.print_exc()
+            print '=== STEP ERROR INFO END'
             comment_result.append("NULL")
     print len(comment_result)
 
@@ -110,11 +112,11 @@ def run(db_path, table_name, db_save_path):
 
 if __name__ == '__main__':
     db_path = '/Volumes/Macintosh/dataset/stock_sentiment/discussclear.db'
+    db_save_path = '/Volumes/Macintosh/dataset/stock_sentiment/discussresult.db'
     stock_name = 'SH60'
     for i in xrange(4000):
         try:
             table_name = stock_name + str(i).zfill(4)
-            db_save_path = '/Volumes/Macintosh/dataset/stock_sentiment/discussclearSH60000%s.db' % i
             print table_name, db_save_path
             run(db_path, table_name, db_save_path)
         except:

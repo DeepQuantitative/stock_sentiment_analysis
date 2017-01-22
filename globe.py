@@ -84,7 +84,7 @@ neg_file_path = '/home/zhangxin/work/workplace_python/DeepSentiment/data/train/r
 neu_file_path = '/home/zhangxin/work/workplace_python/DeepSentiment/data/train/result_neu.txt'
 
 
-# 预测
+# 预测模型
 model_rnn_path = '/home/zhangxin/work/workplace_python/stock_industry_sentiment_analysis' \
                  '/data_warehouse/classify_model/model_rnn/rnn_model'
 # model_rnn_path = "/Users/li/workshop/MyRepository/stock_industry_sentiment_analysis/" \
