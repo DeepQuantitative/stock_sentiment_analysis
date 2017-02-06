@@ -4,10 +4,10 @@ import logging
 
 import numpy as np
 from gensim.models import Word2Vec
+from data_processing import data_processing
 from tensorflow.contrib.learn.python.learn.datasets import base
 
 import globe
-from data_prepare import data_processing
 from data_processing import corpus
 from sentiment_polarity.word2vec_model import doc2vec_gensim_train
 

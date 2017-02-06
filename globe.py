@@ -66,8 +66,8 @@ stopword = '/home/zhangxin/work/workplace_python/stock_industry_sentiment_analys
 # file_neg = '/Users/li/workshop/MyRepository/DeepNaturalLanguageProcessing/DeepNLP/data/test3.txt'
 # file_pos = '/Users/li/workshop/MyRepository/DeepNaturalLanguageProcessing/DeepNLP/data/test2.txt'
 # w2c_model_path = '/Users/li/workshop/MyRepository/DeepNaturalLanguageProcessing/DeepNLP/word2vecmodel/model'
-# w2c_model_path = '/Users/li/workshop/MyRepository/stock_industry_sentiment_analysis/data_warehouse/word2vec_model/w2cmodel2'
-w2c_model_path = '/home/zhangxin/work/workplace_python/stock_industry_sentiment_analysis/data_warehouse/word2vec_model/w2cmodel'
+w2c_model_path = '/Users/li/workshop/MyRepository/stock_sentiment_analysis/data_warehouse/word2vec_model/w2cmodel2.model'
+# w2c_model_path = '/home/zhangxin/work/workplace_python/stock_sentiment_analysis/data_warehouse/word2vec_model/w2cmodel'
 
 # w2v模型的参数
 n_dim = 200
