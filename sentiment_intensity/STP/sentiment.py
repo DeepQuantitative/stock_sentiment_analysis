@@ -33,7 +33,6 @@ class memoize:
             return self.memoized[args]
 
 
-
 # 计算情感值
 def __com(tree):
     if tree.height() == 2:
