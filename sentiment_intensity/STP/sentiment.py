@@ -19,6 +19,21 @@ sys.setdefaultencoding("utf-8")
 flag = False  # 限定词标记
 
 
+class memoize:
+    # from http://avinashv.net/2008/04/python-decorators-syntactic-sugar/
+    def __init__(self, function):
+        self.function = function
+        self.memoized = {}
+
+    def __call__(self, *args):
+        try:
+            return self.memoized[args]
+        except KeyError:
+            self.memoized[args] = self.function(*args)
+            return self.memoized[args]
+
+
+
 # 计算情感值
 def __com(tree):
     if tree.height() == 2:
@@ -81,6 +96,7 @@ def __com(tree):
 
 
 # 计算情感值  考虑特殊限定词导致情感极性转移
+@memoize
 def __com_limit(tree):
     global flag
 
@@ -157,6 +173,7 @@ def __com_limit(tree):
         return temp, flag_out
 
 
+@memoize
 def compute(sentence):
     # print sentence
     # 去停去空格，让句子过English词典

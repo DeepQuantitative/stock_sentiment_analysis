@@ -2,10 +2,11 @@
 """
 使用dataframe格式计算每条评论的情感强度，中间包含了去除无关评论、
 """
-from pandas.io import sql
+import cProfile
 import sqlite3
 import json
 import re
+from pandas.io import sql
 from sentiment_intensity.STP import dicts
 from sentiment_intensity.STP import sentiment
 from sentiment_intensity.STP.test import read_data
@@ -119,5 +120,7 @@ if __name__ == '__main__':
             table_name = stock_name + str(i).zfill(4)
             print table_name, db_save_path
             run(db_path, table_name, db_save_path)
+            # 测试函数的运行时间
+            # cProfile.run("print run(db_path, table_name, db_save_path)")
         except:
             pass

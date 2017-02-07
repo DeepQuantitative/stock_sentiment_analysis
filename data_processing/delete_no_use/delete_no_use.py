@@ -27,17 +27,21 @@ def get_stock():
 
 def process(content):
     """
-    对评论内容进行初步的数据预清洗
+    按照规则对评论内容进行初步的数据预清洗
     :param content:
     :return:
     """
+    get_stock()
     global stocks
+    # 规则 1
     # 如果评论内容的超过300个字符则剔除
     if len(content) > 300:
         return False
+    # 规则 2
     # 如果评论内容中包含url
     elif content.__contains__("http"):
         return False
+    # 规则 3
     # 如果评论中包含超过5支股票的信息
     num_stocks = 5
     count = 0

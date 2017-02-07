@@ -27,7 +27,22 @@ sys.setdefaultencoding("utf-8")
 path_dit = globe.path_dit
 
 
+class memoize:
+    # from http://avinashv.net/2008/04/python-decorators-syntactic-sugar/
+    def __init__(self, function):
+        self.function = function
+        self.memoized = {}
+
+    def __call__(self, *args):
+        try:
+            return self.memoized[args]
+        except KeyError:
+            self.memoized[args] = self.function(*args)
+            return self.memoized[args]
+
+
 # 句法分析
+@memoize
 def parser(sentence):
     chi_parser = StanfordParser(path_to_jar=path_dit.get('path_to_jar'),
                                 path_to_models_jar=path_dit.get('path_to_models_jar'),

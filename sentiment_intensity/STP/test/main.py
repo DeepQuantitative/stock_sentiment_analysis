@@ -15,6 +15,7 @@ import jieba
 import read_data
 import sentiment_intensity.STP.dicts as dicts
 import sentiment_intensity.STP.sentiment as sentiment
+import cProfile
 
 
 def test_xueqiu():
@@ -128,7 +129,8 @@ def test():
     sent = u'格力电器真是爱不起来'
     sent = u'格力电器真是爱你不起来'
 
-    result = sentiment.compute_test(sent)
+    # result = sentiment.compute_test(sent)
+    result = sentiment.compute(sent)
     print result
 
 
@@ -206,7 +208,10 @@ if __name__ == "__main__":
 
     # test_xueqiu()
 
-    test()
+    # test()
+
+    cProfile.run('print test(); print')
+
 
     # tese_lqj()
 
